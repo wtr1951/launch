@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Launch Vault is a premium 2026 database of AI aggregators, micro-SaaS directories, SEO backlink channels, and automation prompt matrices for indie founders.">
+  <meta name="theme-color" content="#F8FAFC">
+  <title>Launch Vault 2026 | XYSide</title>
+  <script src="https://gumroad.com/js/gumroad.js"></script>
+  <style>
+    :root {
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --ink: #0F172A;
+      --muted: #64748B;
+      --soft: #94A3B8;
+      --line: #E2E8F0;
+      --brand: #2563EB;
+      --brand-deep: #1E40AF;
+      --cyan: #0891B2;
+      --cyan-soft: rgba(8, 145, 178, 0.12);
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+      --shadow-strong: 0 30px 80px -40px rgba(15, 23, 42, 0.45);
+      --radius: 8px;
+      --max: 1180px;
+      --nav-h: 70px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.06), transparent 32rem),
+        linear-gradient(180deg, #FFFFFF 0%, var(--bg) 30%, var(--bg) 100%);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.78);
+      background: rgba(248, 250, 252, 0.76);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      width: min(100% - 40px, var(--max));
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      border-radius: 8px;
+      background: linear-gradient(145deg, #FFFFFF 0%, #EEF6FF 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 18px -14px rgba(37, 99, 235, 0.8);
+      color: var(--brand);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .nav-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 680;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    .nav-link:hover {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+      color: var(--brand);
+      background: rgba(37, 99, 235, 0.08);
+      padding-left: 26px;
+    }
+
+    .nav-link.active::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.12);
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .section {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: calc(100vh - var(--nav-h));
+      display: grid;
+      align-items: center;
+      padding: 82px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+      align-items: center;
+      gap: clamp(36px, 7vw, 92px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 34px;
+      padding: 0 16px;
+      border: 1px solid rgba(8, 145, 178, 0.24);
+      border-radius: 999px;
+      color: var(--cyan);
+      background: rgba(240, 253, 250, 0.72);
+      box-shadow: 0 12px 30px -22px rgba(8, 145, 178, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22D3EE;
+      box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.42);
+      animation: breathe 2.4s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(0.92);
+        box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.30);
+      }
+      50% {
+        transform: scale(1.12);
+        box-shadow: 0 0 0 9px rgba(34, 211, 238, 0.06);
+      }
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 26px 0 0;
+      font-size: clamp(3.35rem, 8.1vw, 7.55rem);
+      line-height: 0.92;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2.1vw, 1.34rem);
+      line-height: 1.72;
+      font-weight: 480;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .primary-link,
+    .secondary-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      border-radius: 999px;
+      font-size: 0.98rem;
+      font-weight: 780;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+    }
+
+    .primary-link {
+      padding: 0 24px;
+      color: #FFFFFF;
+      background: var(--ink);
+      box-shadow: 0 18px 34px -20px rgba(15, 23, 42, 0.85);
+    }
+
+    .primary-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 45px -22px rgba(15, 23, 42, 0.9);
+    }
+
+    .secondary-link {
+      padding: 0 20px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .secondary-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.28);
+      background: #FFFFFF;
+      box-shadow: var(--shadow);
+    }
+
+    .artifact {
+      position: relative;
+      min-height: 530px;
+      display: grid;
+      place-items: center;
+    }
+
+    .vault-window {
+      width: min(100%, 420px);
+      border: 1px solid rgba(226, 232, 240, 0.96);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-strong);
+      overflow: hidden;
+      transform: rotate(1.5deg);
+    }
+
+    .vault-top {
+      height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #FFFFFF, #F8FAFC);
+    }
+
+    .window-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: #CBD5E1;
+    }
+
+    .window-dot:nth-child(1) {
+      background: #F87171;
+    }
+
+    .window-dot:nth-child(2) {
+      background: #FBBF24;
+    }
+
+    .window-dot:nth-child(3) {
+      background: #34D399;
+    }
+
+    .vault-body {
+      padding: 22px;
+    }
+
+    .mini-table {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mini-row {
+      display: grid;
+      grid-template-columns: 1fr 58px 70px;
+      gap: 8px;
+      align-items: center;
+      min-height: 46px;
+      padding: 9px 10px;
+      border: 1px solid rgba(226, 232, 240, 0.82);
+      border-radius: 8px;
+      background: #FFFFFF;
+      box-shadow: 0 10px 24px -22px rgba(15, 23, 42, 0.35);
+    }
+
+    .mini-title {
+      min-width: 0;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 780;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .mini-da,
+    .mini-tier {
+      min-width: 0;
+      border-radius: 999px;
+      padding: 5px 8px;
+      color: var(--brand);
+      background: rgba(37, 99, 235, 0.08);
+      font-size: 0.74rem;
+      font-weight: 820;
+      text-align: center;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .mini-tier {
+      color: #0F766E;
+      background: rgba(15, 118, 110, 0.08);
+    }
+
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      min-height: 78px;
+      padding: 14px 12px;
+      border: 1px solid rgba(226, 232, 240, 0.82);
+      border-radius: 8px;
+      background: #F8FAFC;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.28rem;
+      line-height: 1;
+      font-weight: 880;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .modules {
+      padding: 44px 0 70px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      max-width: 720px;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.02;
+      font-weight: 830;
+      letter-spacing: 0;
+    }
+
+    .section-heading p {
+      max-width: 390px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .module-card {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37, 99, 235, 0.24);
+      box-shadow: 0 28px 60px -46px rgba(15, 23, 42, 0.65);
+    }
+
+    .icon-shell {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(37, 99, 235, 0.16);
+      border-radius: 8px;
+      background: linear-gradient(145deg, #FFFFFF 0%, #EFF6FF 100%);
+      color: var(--brand);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 18px 34px -28px rgba(37, 99, 235, 0.9);
+    }
+
+    .icon-shell svg {
+      width: 34px;
+      height: 34px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .module-card h3 {
+      margin: 30px 0 0;
+      color: var(--ink);
+      font-size: 1.34rem;
+      line-height: 1.18;
+      font-weight: 840;
+      letter-spacing: 0;
+    }
+
+    .module-card p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 0.99rem;
+      line-height: 1.72;
+      font-weight: 480;
+    }
+
+    .card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--soft);
+      font-size: 0.78rem;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card-foot span:last-child {
+      color: var(--brand);
+    }
+
+    .gate-wrap {
+      padding: 26px 0 96px;
+    }
+
+    .gate {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 34px;
+      align-items: center;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #FFFFFF;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 55px 120px -80px rgba(15, 23, 42, 0.48);
+      overflow: hidden;
+    }
+
+    .gate::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), #06B6D4, #22C55E);
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--ink);
+      font-size: clamp(4.7rem, 10vw, 8.5rem);
+      line-height: 0.9;
+      font-weight: 880;
+      letter-spacing: 0;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.25;
+    }
+
+    .gate-copy {
+      max-width: 500px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .specs {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .spec {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 13px;
+      border: 1px solid rgba(226, 232, 240, 0.92);
+      border-radius: 999px;
+      color: var(--ink);
+      background: #F8FAFC;
+      font-size: 0.84rem;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .gate-action {
+      margin-top: 10px;
+    }
+
+    .gate .gumroad-button {
+      background: #0F172A;
+      color: #FFF;
+      padding: 18px 45px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .gate .gumroad-button:hover {
+      transform: translateY(-2px) scale(1.015);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .trust-box {
+      min-height: 86px;
+      padding: 14px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 8px;
+      background: #FFFFFF;
+    }
+
+    .trust-box strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 830;
+      line-height: 1.2;
+    }
+
+    .trust-box span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.35;
+      font-weight: 560;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 20px 38px;
+      color: #94A3B8;
+      background: var(--bg);
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    footer a {
+      color: #64748B;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    footer a:hover {
+      color: var(--ink);
+    }
+
+    @media (max-width: 1060px) {
+      .nav {
+        height: auto;
+      }
+
+      .nav-inner {
+        min-height: var(--nav-h);
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 58px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .artifact {
+        min-height: auto;
+      }
+
+      .vault-window {
+        transform: none;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .section-heading p {
+        max-width: 720px;
+      }
+
+      .module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .module-card {
+        min-height: 260px;
+      }
+
+      .gate {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .section,
+      .nav-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero {
+        padding: 42px 0 56px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 15.2vw, 4.7rem);
+        line-height: 0.94;
+      }
+
+      .hero-copy {
+        font-size: 1.02rem;
+      }
+
+      .hero-actions,
+      .specs {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .primary-link,
+      .secondary-link,
+      .gate .gumroad-button {
+        width: 100%;
+      }
+
+      .mini-row {
+        grid-template-columns: 1fr 52px;
+      }
+
+      .mini-tier {
+        display: none;
+      }
+
+      .stats-strip,
+      .trust-row {
+        grid-template-columns: 1fr;
+      }
+
+      .module-card,
+      .gate {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="https://xyside.com/" aria-label="XYSide home">
+        <span class="brand-mark" aria-hidden="true">XY</span>
+        <span>XYSide</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="https://xyside.com/">Hub Home</a>
+        <a class="nav-link" href="https://xyside.com/blog/">Blog</a>
+        <a class="nav-link" href="https://calc.xyside.com/">📊 Tax Calculator</a>
+        <a class="nav-link" href="https://tools.xyside.com/">🛠 Image Optimizer</a>
+        <a class="nav-link" href="https://ai.xyside.com/">🧠 AI Prompt Studio</a>
+        <a class="nav-link active" href="https://launch.xyside.com/" aria-current="page">🛍 Launch Vault</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>2026 EDITION ACTIVE</div>
+          <h1 id="hero-title">Launch Your App. Steal High-DA Backlinks. Fast.</h1>
+          <p class="hero-copy">Stop wasting 40+ hours hunting for directories. Access 200+ verified launch platforms, AI aggregators, and high-authority SEO backlink nodes to kickstart your product's organic growth.</p>
+          <div class="hero-actions" aria-label="Hero actions">
+            <a class="primary-link" href="https://xyside.gumroad.com/l/saas-launch-database" target="_blank" rel="noopener">Buy the Vault</a>
+            <a class="secondary-link" href="#vault-modules">View Modules</a>
+          </div>
+        </div>
+
+        <div class="artifact" aria-label="Launch database preview">
+          <div class="vault-window">
+            <div class="vault-top" aria-hidden="true">
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+            </div>
+            <div class="vault-body">
+              <div class="mini-table" aria-hidden="true">
+                <div class="mini-row">
+                  <span class="mini-title">Product Hunt</span>
+                  <span class="mini-da">DA 91</span>
+                  <span class="mini-tier">Massive</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-title">AlternativeTo</span>
+                  <span class="mini-da">DA 82</span>
+                  <span class="mini-tier">High</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-title">Dev.to Publication</span>
+                  <span class="mini-da">DA 83</span>
+                  <span class="mini-tier">SEO</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-title">Hashnode Hub</span>
+                  <span class="mini-da">DA 78</span>
+                  <span class="mini-tier">Index</span>
+                </div>
+                <div class="mini-row">
+                  <span class="mini-title">Reddit Enclaves</span>
+                  <span class="mini-da">DA 91</span>
+                  <span class="mini-tier">Signal</span>
+                </div>
+              </div>
+              <div class="stats-strip" aria-hidden="true">
+                <div class="stat">
+                  <strong>200+</strong>
+                  <span>Launch and SEO nodes</span>
+                </div>
+                <div class="stat">
+                  <strong>3</strong>
+                  <span>Monetization command layers</span>
+                </div>
+                <div class="stat">
+                  <strong>$19</strong>
+                  <span>Founder-friendly price</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section modules" id="vault-modules" aria-labelledby="modules-title">
+      <div class="section-heading">
+        <h2 id="modules-title">Three execution layers for a sharper launch surface.</h2>
+        <p>A compact command vault for founders who need traffic discovery, authority signals, and monetization workflows in one clean asset.</p>
+      </div>
+
+      <div class="module-grid">
+        <article class="module-card">
+          <div>
+            <div class="icon-shell" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M24 5l5.8 11.7 12.9 1.9-9.4 9.1 2.2 12.8L24 34.4 12.5 40.5l2.2-12.8-9.4-9.1 12.9-1.9L24 5z"></path>
+                <path d="M24 15v10l7 4"></path>
+              </svg>
+            </div>
+            <h3>120+ Verified AI &amp; Micro-SaaS Aggregators</h3>
+            <p>Hand-picked launch platforms including Domain Authority (DA) metrics, traffic tiers, and exact skip-the-line URLs. Built for rapid initial validation.</p>
+          </div>
+          <div class="card-foot">
+            <span>Traffic layer</span>
+            <span>01</span>
+          </div>
+        </article>
+
+        <article class="module-card">
+          <div>
+            <div class="icon-shell" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M17 20l-5 5a8 8 0 0011.3 11.3l5-5"></path>
+                <path d="M31 28l5-5A8 8 0 0024.7 11.7l-5 5"></path>
+                <path d="M19 29l10-10"></path>
+                <path d="M8 9h8"></path>
+                <path d="M9 8v8"></path>
+                <path d="M32 39h8"></path>
+              </svg>
+            </div>
+            <h3>50+ Sterile High-DA SEO Backlink Channels</h3>
+            <p>Zero-risk, high-trust web structures where you can safely embed your app link to force Googlebot crawling and skyrocket your index impressions.</p>
+          </div>
+          <div class="card-foot">
+            <span>Authority layer</span>
+            <span>02</span>
+          </div>
+        </article>
+
+        <article class="module-card">
+          <div>
+            <div class="icon-shell" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M10 13a5 5 0 015-5h18a5 5 0 015 5v22a5 5 0 01-5 5H15a5 5 0 01-5-5V13z"></path>
+                <path d="M16 17h16"></path>
+                <path d="M16 24h11"></path>
+                <path d="M16 31h7"></path>
+                <path d="M34 28l3 3 5-6"></path>
+              </svg>
+            </div>
+            <h3>Premium AI Automation Prompt Matrices</h3>
+            <p>Industrial-grade CO-STAR &amp; CRISPE prompt frameworks engineered to automate cross-border freelance contracts and hyper-targeted cold outreach campaigns.</p>
+          </div>
+          <div class="card-foot">
+            <span>Automation layer</span>
+            <span>03</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gate-wrap" aria-labelledby="purchase-title">
+      <div class="gate">
+        <div>
+          <div class="price" id="purchase-title">$19 <span>USD / One-time purchase</span></div>
+          <p class="gate-copy">A single focused database for indie builders who want launch surfaces, backlink nodes, and reusable prompt systems without turning research into another unfinished project.</p>
+        </div>
+
+        <div>
+          <div class="specs" aria-label="Product specifications">
+            <span class="spec">Lifetime Free Updates</span>
+            <span class="spec">Markdown Format</span>
+            <span class="spec">Instantly Downloadable</span>
+          </div>
+          <div class="gate-action">
+            <a class="gumroad-button" href="https://xyside.gumroad.com/l/saas-launch-database" target="_blank" rel="noopener" style="background:#0F172A; color:#FFF; padding:18px 45px; border-radius:999px; font-weight:800; font-size:1.2rem; display:inline-flex; text-decoration:none; box-shadow:0 20px 40px rgba(0,0,0,0.1); margin-top:20px; transition: all 0.3s ease;">Get Instant Access to the Vault</a>
+          </div>
+          <div class="trust-row" aria-label="Purchase assurances">
+            <div class="trust-box">
+              <strong>Founder priced</strong>
+              <span>Built for solo operators, not procurement committees.</span>
+            </div>
+            <div class="trust-box">
+              <strong>No platform lock-in</strong>
+              <span>Use the Markdown asset in any notes, docs, or ops stack.</span>
+            </div>
+            <div class="trust-box">
+              <strong>Action first</strong>
+              <span>URLs, angles, and execution notes are kept launch-ready.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>2026 XYSide. All rights reserved.</div>
+    <div><a href="https://xyside.com/privacy.html">Privacy Policy</a> | <a href="https://xyside.com/terms.html">Terms of Service</a></div>
+  </footer>
+</body>
+</html>
